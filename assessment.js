@@ -53,10 +53,21 @@ var snake = {
   runs: 'legless'
 };
 
+var snakePropNames = [];
+var snakePropVal = [];
+
+snakePropNames = Object.keys(snake);
+
 for (var prop in snake) {
-	if (snake[prop][0] === 's') {
-		snake[prop] = 's';
+	snakePropVal.push(snake[prop]);
+}
+for (var i = 0; i < snakePropNames.length; i++) {
+	if (snakePropNames[i][0] === 's') {
+		snakePropVal[i] = 's';
 	}
+}
+for (var j = 0; j < snakePropVal.length; j++) {
+	snake[snakePropNames[j]] = snakePropVal[j];
 }
 
 
